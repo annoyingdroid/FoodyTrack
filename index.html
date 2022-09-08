@@ -6,32 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>FoodyTrack</title>
 </head>
 
 <body>
-    <header class="main">
-      <div class="left">
-        <h1 class="title-text">FoodyTrack</h1>
-      </div>
-      <div class="right">
-        <button type="button" class="btn">TEST</button>
-      </div>
+    <header>
+        <h1 class="title-text">FoodyTrack™</h1>
     </header>
     <main>
-        <div class="container">
+        <div>
             <div class="row">
-                <div id="searchBox" class="col s5">
-                    //Search Box
+                <div id="searchBox" class="col s3 card-panel">
+                    <button class="search-btn btn waves-effect waves-light btn-large" type="submit">Find Recipes!
+                        <i class="search-arrow material-icons">arrow_forward</i></button>
                 </div>
 
-                <div id="searchFilters" class="col s7">
-                    //Search Filters
+                <div id="searchFilters" class="col s9 card-panel">
+
                 </div>
             </div>
             <div class="row">
-                <div id="favorites" class="col s5">
+                <div id="favorites" class="col s3 card-panel">
                     //Favorites list
                     <ul>
                         <li>
@@ -40,7 +37,7 @@
                     </ul>
                 </div>
 
-                <div id="dataDisplay" class="col s7">
+                <div id="dataDisplay" class="col s9 card-panel">
                     //Display recipe data/nutrition info here
                 </div>
             </div>
