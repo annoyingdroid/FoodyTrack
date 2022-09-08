@@ -1,3 +1,13 @@
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+      
+  var instance = M.FormSelect.getInstance(instance.getSelectedValues());
+  console.log(response);
+
+
+
+
 // declare get recipes function
 var getRecipes = function (qParam) {
     var apiUrl = "https://api.edamam.com/api/recipes/v2?type=public&app_id=b08dc2fb&app_key=783268a2de0b8c46cf30721531506847&q=" + qParam;
@@ -11,3 +21,7 @@ var getRecipes = function (qParam) {
 };
 
 getRecipes("chicken");
+
+
+
+// start dynamic card creation
