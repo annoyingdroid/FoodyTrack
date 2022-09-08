@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .left {
   display: flex;
   flex-direction: row;
@@ -5,3 +6,20 @@
   background-color: red;
   color: blue;
 }
+=======
+#searchBox {
+  border: 1px solid red;
+}
+
+#searchFilters {
+  border: 1px solid red;
+}
+
+#favorites {
+  border: 1px solid red;
+}
+
+#dataDisplay {
+  border: 1px solid red;
+}
+>>>>>>> dev
