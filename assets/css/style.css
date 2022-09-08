@@ -1,0 +1,7 @@
+.left {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  background-color: red;
+  color: blue;
+}
