@@ -20,6 +20,9 @@ var getRecipes = function (qParam) {
 
 getRecipes("chicken");
 
-
+function dropDownMenu() {
+  var list = document.getElementById("option");
+  document.getElementById("city")
+}
 
 // start dynamic card creation
