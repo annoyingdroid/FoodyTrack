@@ -18,6 +18,7 @@
     <main>
         <div>
             <div class="row">
+                <!-- SEARCH BOX -->
                 <div id="searchBox" class="col s3 card-panel">
                     <input id="qParameter" placeholder="Chicken">
                     <button class="search-btn btn waves-effect waves-light btn-large" type="submit">Find Recipes!
@@ -26,7 +27,7 @@
 
                 <div id="searchFilters" class="col s9 card-panel">
 
-                    <!-- diet options -->
+                    <!-- DIET OPTIONS FILTER -->
                     <div id="dietOptions" class="input-field col s3">
                         <select multiple>
                             <option value="" disabled selected></option>
@@ -40,7 +41,7 @@
                         <label>Diet Options:</label>
                     </div>
 
-                    <!-- health options -->
+                    <!-- HEALTH OPTIONS FILTER -->
                     <div id="healthOptions" class="input-field col s3">
                         <select multiple>
                             <option value="" disabled selected></option>
@@ -72,7 +73,7 @@
                         <label>Health Options:</label>
                     </div>
 
-                    <!-- dish type select -->
+                    <!-- DISH TYPE FILTER  -->
                     <div id="dishTypeOptions" class="input-field col s3">
                         <select>
                             <option value="" disabled selected></option>
@@ -97,6 +98,8 @@
 
                 </div>
             </div>
+
+            <!-- FAVORITES DIV -->
             <div class="row">
                 <div id="favorites" class="col s3 card-panel">
                     //Favorites list
@@ -107,8 +110,47 @@
                     </ul>
                 </div>
 
+                <!-- SEARCH RESULTS -->
                 <div id="dataDisplay" class="col s9 card-panel">
-                    //Display recipe data/nutrition info here
+                    <!-- cards will display here -->
+                    <div class="recipe-card card col s3">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator"
+                                src="https://edamam-product-images.s3.amazonaws.com/web-img/e12/e12b8c5581226d7639168f41d126f2ff.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjELb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIBnFmi9h22Fmo1b%2Bilc6db%2FctwLzeGkInUWzha4%2Fi3N5AiEAjJNsTQkPYeLtfLDLFqM5hJakd6WHua%2FylxMSkY0m%2FUwqzAQITxAAGgwxODcwMTcxNTA5ODYiDHUuUPx1j3d%2FeNX8diqpBGED8hwzgY2cOAyAbC1hvUU5x8q8EgUdaLXsR0kxoGREIo4wGFu75x%2FcfoQraRaXSseJGhwv7OFjbP8Qzd3vcVEEKDsSgwWvMSd4Xoa9LEQjm3XcZ%2FtlY3YmLB5t1k4wL6dYfrsdDXetKCkFj8KbRdQNLnuCoJZqCqBbveCM9CuZWBjYBb4P%2BfrnenvCVjGgctmo8VUlerT4SqNaL0QSuUVk9rc89pgtTPGnGd44ivxvvdoLQ%2B4XEQ%2B1xnlH%2F5f0rRb4YsKeZXijQgPaKNTkw6UXvquTBXhVZK6zM9CcFkxhxu84oc2G%2BI1523sClRVon%2BdMzjGXhQSme91jYnsfzdU1xlF2Tc3OCyIbiBK9hj4jfXwpHdiEBfda7HqoTee%2Fr%2B6XkMzsl%2Bx%2FOIaA4Wze5ogr9LJaL1yygA5fm%2BwWVmAO%2FUxBtJGWg8iU7QL0jkGize72A7V7OyZTSfERhki10on3QOPIf9%2FNbAdtIeAo1euH8zXYcxhlaDDqZ9E3rEdpExSta0jFCcJ1OjBDDwgMRpVHFll6ZjET8fdbZZUPo7MUAPACQ6aHHDlvbApmdjupZtXw1cMwqqHwwNNSho5NzD2R81c6pzAY5rsz%2Bc2Q5ELOLNvo3TZixDqkY3qudijnlKn7imp2DX88Auo2gYXUCV4UO1zQTvgLUXRcNNFSuKs4JdCEvySRfDyJbzYwSdwFMxjP2Pk2j9zOtTL5T9R4axw7UhzApucl2Qgwit%2FumAY6qQHIhZSqqRbBGsRo7P9T7O8eh23ZEbgOy3AhfkLCH7pRXqa5sMNUT91UTW%2BBDAvTpw08aukiNpo3fvQuSp8X7RKmBZ3FZOsQVZAAx6mjwK7cg1Yf7iufC%2FDsih%2Fx1DGtGRquLowFbmlag60tJVvvspuHEArVUVje2M8juRWMKhW2TZaDwlPp3290BpuM3o6Gr5pwOU39m8g2PDlDOU5n8SBvkLZNozl2TZ6A&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220909T215424Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFHTSU4HO6%2F20220909%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c54f5793b68c5141f6af0942bf464e7009342dad6c3a25edad34f3099727607b">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">DUMMY CARD<i
+                                    class="material-icons right">more_vert</i></span>
+                            <p><a href="http://norecipes.com/recipe/chicken-paprikash/">DUMMY CARD</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Chicken Paprikash<i
+                                    class="material-icons top-right"></i></span>
+                            <hr />
+                            <p>Calories: 3033</p>
+                            <p>Diet Lables: Low Carb</p>
+                            <p>Health Labels:</p>
+                            <ul>
+                                <li>Egg-Free</li>
+                                <li>Peanut-Free</li>
+                                <li>Tree-Nut-Free</li>
+                                <li>Soy-Free</li>
+                            </ul>
+                            <p>Cautions: Sulfites</p>
+                            <p>Ingredients:</p>
+                            <ul>
+                                <li>Egg-Free</li>
+                                <li>Peanut-Free</li>
+                                <li>Tree-Nut-Free</li>
+                                <li>Soy-Free</li>
+                                <li>Egg-Free</li>
+                                <li>Peanut-Free</li>
+                                <li>Tree-Nut-Free</li>
+                                <li>Soy-Free</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
