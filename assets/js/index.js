@@ -1,3 +1,8 @@
+// declare variables
+var recipeBtnSubmit = document.querySelector('.search-btn');
+var qParam = document.querySelector('#qParameter');
+
+
 $(document).ready(function () {
     $('select').formSelect();
 });
@@ -16,10 +21,15 @@ var getRecipes = function (qParam) {
             response.json().then(function (recipeData) {
                 displayRecipes(recipeData);
             })
-        } else {
+        } else { 
             // TO DO: add modal alert that displays "problem getting recipes"
+            M.toast({html: 'Problem getting recipes!', classes: 'rounded'});
         }
     });
+};
+
+var addToFavorites = function (currentRecipe) {
+    console.log(currentRecipe);
 };
 
 // dynamically display recipe cards to page
@@ -33,6 +43,7 @@ var displayRecipes = function (recipeData) {
         // 1a. create card for current recipe and set classes
         var cardContainer = $("<div>");
         cardContainer.addClass("recipe-card card col s3");
+        cardContainer.attr("id", "cardContainer");
 
         // 1b. create card-image div and set classes
         var cardImageEl = $("<div>");
@@ -86,6 +97,29 @@ var displayRecipes = function (recipeData) {
         // 2j. append cardContentEl to cardContainer
         cardContainer.append(cardContentEl);
 
+        // 2k. create button to favorite recipe
+        var favRecipe = $('<a>').addClass("btn-floating btn-small waves-effect waves-light green");
+        var favRecipeI = $('<i>').addClass("material-icons").text("add");
+        favRecipe.append(favRecipeI);
+        favRecipe.attr('data-number', [i]);
+        console.log(i);
+        favRecipe.attr("id", "favButton");
+        // favRecipe.addClass(function (recipes){
+            
+
+            // var cardNumber = [i] + 1;
+            // console.log(cardNumber);
+            // favRecipe.addClass(cardNumber);
+            // console.log(favRecipe.class);
+                
+        // })
+
+        // 2l. append favRecipe to cardContent El
+        cardContentEl.append(favRecipe); 
+
+        // // 2m. add event listener to add to favorites list
+        // $("#favButton").click(addToFavorites(currentRecipe));
+
         // 3Aa. create card reveal div and set classes
         var cardRevealEl = $("<div>");
         cardRevealEl.addClass("card-reveal");
@@ -129,6 +163,11 @@ var displayRecipes = function (recipeData) {
         // append card container to data display
         dataDisplayContainer.append(cardContainer);
     }
+//  2m. add event listener to add to favorites list
+ $("#favButton").click(function (event){
+    var favListEl = currentRecipe.label;
+    console.log(event.target);
+});
 }
-
-getRecipes("beef");
+recipeBtnSubmit.addEventListener("submit",
+getRecipes("Beef"));
