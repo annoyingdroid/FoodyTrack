@@ -45,3 +45,8 @@ header {
 .recipe-card {
   margin: 20px;
 }
+
+.calories {
+  display: flex;
+  flex-direction: row;
+}
