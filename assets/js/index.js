@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('select').formSelect();
 });
 
+//Loads favorites list on page load
 loadFaves();
 function loadFaves(){
     var keys = Object.keys(localStorage);
@@ -203,12 +204,13 @@ function displayRecipes(recipeData){
 
 //  2m. add event listener to add to favorites list
 
+//Saves recipe in favorites and refreshes the faves list
 function faveRecipe(recipeName, recipeLink){
-    console.log(recipeName + " " + recipeLink);
     localStorage.setItem(recipeName, recipeLink);
     loadFaves();
 }
 
+//Search Button Eventlistener
 $("#searchBtn").on('click', function(event){
     getRecipes($("#qParameter").val());
 });
