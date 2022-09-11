@@ -1,7 +1,24 @@
 // declare variables
 var qParam = document.querySelector('#qParameter');
 var dataDisplayContainer = $("#dataDisplay");
-var card = $("#dataDisplay .recipe-card .card-content .btn-floating");
+var foodEmojis = [];
+
+//Dynamically sets favicon to random food emoji
+getEmojis();
+function getEmojis(){
+    var emojiURL = "https://emoji-api.com/categories/food-drink?access_key=4a22fc6b1e718d109490e5152618ae71ee948623";
+    fetch(emojiURL).then(
+        response => {return response.json();})
+    .then(data => {
+        for([index, obj] of data.entries()){
+            foodEmojis.push(obj.character);
+        }
+        var index = Math.round(Math.random() * 257) - 1;
+        $('#favicon').attr("href","data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>"+ foodEmojis[index] +"</text></svg>");
+        $('#navTitle').text(foodEmojis[index] + "FoodyTrack™");
+
+    })
+}
 
 $(document).ready(function () {
     $('select').formSelect();
@@ -202,7 +219,7 @@ function displayRecipes(recipeData){
     }
 }
 
-//  2m. add event listener to add to favorites list
+//  2m. add event listener to add to favorites lgitist
 
 //Saves recipe in favorites and refreshes the faves list
 function faveRecipe(recipeName, recipeLink){
