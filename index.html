@@ -12,20 +12,28 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="title-text">FoodyTrack™</h1>
-    </header>
+    <!-- Navbar code -->
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo">FoodyTrack™</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>A Breakfast Club Production</li>
+            </ul>
+        </div>
+    </nav>
+
+
     <main>
         <div>
             <div class="row">
                 <!-- SEARCH BOX -->
-                <div id="searchBox" class="col s3 card-panel">
+                <div id="searchBox" class="col s4 card-panel" style="min-height:120px; max-height:120px">
                     <input id="qParameter" placeholder="Ingredient">
                     <button id="searchBtn" class="search-btn btn waves-effect waves-light btn-large" type="submit">Find Recipes!
                         <i class="search-arrow material-icons">arrow_forward</i></button>
                 </div>
 
-                <div id="searchFilters" class="col s9 card-panel">
+                <div id="searchFilters" class="col s8 card-panel" style="min-height:120px; max-height:120px">
 
                     <!-- DIET OPTIONS FILTER -->
                     <div id="dietOptions" class="input-field col s3">
@@ -95,19 +103,19 @@
                         </select>
                         <label>Dish Type:</label>
                     </div>
-
                 </div>
             </div>
 
             <!-- FAVORITES DIV -->
             <div class="row">
-                <div id="favorites" class="col s3 card-panel">
+                <div id="favorites" class="col s4 card-panel">
+                    <h5>Favorites</h5>
                     <ul id="favesList">
                     </ul>
                 </div>
 
                 <!-- SEARCH RESULTS -->
-                <div id="dataDisplay" class="col s9 card-panel">
+                <div id="dataDisplay" class="col s8 card">
                     <!-- cards will display here -->
                     <!-- <div class="recipe-card card col s3">
                         <div class="card-image waves-effect waves-block waves-light">
