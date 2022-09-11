@@ -61,13 +61,15 @@ function getRecipes(qParam){
 
     // make request to the url
     fetch(apiUrl).then(function (response) {
-        if (response.ok) {
+        if (response.ok && response > 0) {
             response.json().then(function (recipeData) {
                 displayRecipes(recipeData);
+                console.log(response);
             })
-        } else { 
+        } else{ 
+            
             // TO DO: add modal alert that displays "problem getting recipes"
-            M.toast({html: 'Problem getting recipes!', classes: 'rounded'});
+            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
         }
     });
 };
