@@ -40,6 +40,7 @@ function loadFaves(){
     `);
     }
 };
+
 loadFilters();
 function loadFilters() {
     for(obj of dietOptions){
@@ -242,6 +243,7 @@ function faveRecipe(recipeName, recipeLink){
 
 //Search Button Eventlistener
 $("#searchBtn").on('click', function(event){
+    $("#dataDisplay").html("");
     getRecipes($("#qParameter").val());
 });
 
