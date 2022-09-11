@@ -7,9 +7,18 @@ $(document).ready(function () {
     $('select').formSelect();
 });
 
-
-
-
+loadFaves();
+function loadFaves(){
+    var keys = Object.keys(localStorage);
+    $("#favesList").html("");
+    for(var k=0; k<keys.length; k++){
+        $("#favesList").append(`
+        <li>
+            <a type="button" class="btn btn-light d-inline" href="`+ localStorage.getItem(keys[k]) +`" target="_blank">`+ keys[k] +`</a>
+        </li>
+    `);
+    }
+};
 
 // declare get recipes function
 function getRecipes(qParam){
@@ -195,9 +204,9 @@ function displayRecipes(recipeData){
 //  2m. add event listener to add to favorites list
 
 function faveRecipe(recipeName, recipeLink){
-    console.log(">>NAME>>" + recipeName);
-    console.log(">>URL>>" + recipeLink);
-    //localStorage.setItem(recipeName, recipeLink);
+    console.log(recipeName + " " + recipeLink);
+    localStorage.setItem(recipeName, recipeLink);
+    loadFaves();
 }
 
 $("#searchBtn").on('click', function(event){
