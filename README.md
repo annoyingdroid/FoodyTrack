@@ -13,4 +13,3 @@ The application can be accessed from: https://annoyingdroid.github.io/FoodyTrack
 * OpenEmoji API
 * Materialize (for styling)
 * Teamwork
-
