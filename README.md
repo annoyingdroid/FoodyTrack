@@ -11,6 +11,6 @@ No deployments currently available
 * Git
 * Edemam API
 * OpenEmoji API
-* Materialize *for styling)
+* Materialize (for styling)
 * Teamwork
 
