@@ -111,7 +111,10 @@
             <!-- FAVORITES DIV -->
             <div class="row">
                 <div id="favorites" class="col s4 card-panel">
-                    <h5>Favorites</h5>
+                    <h5>Favorites
+                        <button class="btn btn-small waves-effect waves-teal btn-flat" style="display:inline;" onclick="localStorage.clear(); loadFaves();">Clear</button>
+                    </h5>
+
                     <ul id="favesList">
                     </ul>
                 </div>

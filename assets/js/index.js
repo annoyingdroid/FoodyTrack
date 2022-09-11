@@ -6,6 +6,10 @@ var dietOptions = ['Balanced', 'High Fiber', 'Hight Protein', 'Low Carb', 'Low F
 var healthOptions = ['Alcohol Cocktails', 'Alcohol Free', 'Alcohol Free','Egg Free', 'Egg Free', 'Egg Free', 'Immunity Supporting', 'Kosher', 'Low Sugar', 'No Oil Added', 'Paleo', 'Peanut Free', 'Pescatarian', 'Pork Free', 'Red Meat Free', 'Sesame Free', 'Shellfish Free', 'Soy Free', 'Sugar Conscious', 'Sulfite Free', 'Tree Nut Free', 'Vegan', 'Vegetarian', 'Wheat Free'];
 var dishType = ['None','Biscuits and Cookies', 'Bread', 'Cereals', 'Condiments and Sauces', 'Desserts', 'Main Course', 'Pancake', 'Preps', 'Preserve', 'Salad', 'Sandwiches', 'Side Dish', 'Soup', 'Starter', 'Sweets'];
 
+$(document).ready(function () {
+    $('select').formSelect();
+});
+
 //Dynamically sets favicon to random food emoji
 getEmojis();
 function getEmojis(){
@@ -22,10 +26,6 @@ function getEmojis(){
 
     })
 }
-
-$(document).ready(function () {
-    $('select').formSelect();
-});
 
 //Loads favorites list on page load
 loadFaves();
@@ -71,10 +71,6 @@ function getRecipes(qParam){
         }
     });
 };
-
-// var addToFavorites = function (currentRecipe) {
-//     console.log(currentRecipe);
-// };
 
 // dynamically display recipe cards to page
 function displayRecipes(recipeData){
