@@ -65,14 +65,19 @@ function getRecipes(qParam){
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (recipeData) {
-                displayRecipes(recipeData);
-                console.log(response);
+                if (recipeData.hits.length > 0){
+                    displayRecipes(recipeData);
+                    console.log(response);
+                } else {
+                    console.log ("BROKEN");
+                    // TO DO: add modal alert that displays "problem getting recipes"
+                    M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+                }
             })
-        // } else {
-        //     console.log ("BROKEN");
-        //     // TO DO: add modal alert that displays "problem getting recipes"
-        //     M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
-        
+        }else {
+            console.log ("BROKEN");
+            // TO DO: add modal alert that displays "problem getting recipes"
+            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
         }
     });
 };
@@ -110,10 +115,6 @@ function displayRecipes(recipeData){
                 </div>
             </div>
         `);
-        }else{ 
-            console.log ("BROKEN");
-        //     // TO DO: add modal alert that displays "problem getting recipes"
-            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
         }
 
         // // NOTE: These steps create a Materialize card called "Card Reveal"
