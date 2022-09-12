@@ -6,6 +6,7 @@ var dietOptions = ['Balanced', 'High Fiber', 'High Protein', 'Low Carb', 'Low Fa
 var healthOptions = ['Alcohol Cocktails', 'Alcohol Free', 'Alcohol Free','Egg Free', 'Egg Free', 'Egg Free', 'Immunity Supporting', 'Kosher', 'Low Sugar', 'No Oil Added', 'Paleo', 'Peanut Free', 'Pescatarian', 'Pork Free', 'Red Meat Free', 'Sesame Free', 'Shellfish Free', 'Soy Free', 'Sugar Conscious', 'Sulfite Free', 'Tree Nut Free', 'Vegan', 'Vegetarian', 'Wheat Free'];
 var dishType = ['None', 'Biscuits and Cookies', 'Bread', 'Cereals', 'Condiments and Sauces', 'Desserts', 'Main Course', 'Pancake', 'Preps', 'Preserve', 'Salad', 'Sandwiches', 'Side Dish', 'Soup', 'Starter', 'Sweets'];
 
+
 $(document).ready(function () {
     $('select').formSelect();
 });
@@ -63,11 +64,19 @@ function getRecipes(qParam){
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (recipeData) {
-                displayRecipes(recipeData);
+                if (recipeData.hits.length > 0){
+                    displayRecipes(recipeData);
+                    console.log(response);
+                } else {
+                    console.log ("BROKEN");
+                    // TO DO: add modal alert that displays "problem getting recipes"
+                    M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+                }
             })
-        } else { 
+        }else {
+            console.log ("BROKEN");
             // TO DO: add modal alert that displays "problem getting recipes"
-            M.toast({html: 'Problem getting recipes!', classes: 'rounded'});
+            M.toast({html: 'There was an issue! Please try again!', classes: 'rounded green'});
         }
     });
 };
@@ -78,7 +87,7 @@ function displayRecipes(recipeData){
     for (var i = 0; i < recipes.length; i++) {
         var currentRecipe = recipes[i].recipe;
         //console.log(currentRecipe);
-
+        if (recipes.length > 0){
         $("#dataDisplay").append(`
             <div class="recipe-card card col s3">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -105,6 +114,7 @@ function displayRecipes(recipeData){
                 </div>
             </div>
         `);
+        }
 
         // // NOTE: These steps create a Materialize card called "Card Reveal"
         // // 1a. create card for current recipe and set classes
