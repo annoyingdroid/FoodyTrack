@@ -77,7 +77,7 @@ function getRecipes(qParam){
         }else {
             console.log ("BROKEN");
             // TO DO: add modal alert that displays "problem getting recipes"
-            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+            M.toast({html: 'There was an issue! Please try again!', classes: 'rounded green'});
         }
     });
 };
