@@ -68,9 +68,11 @@ function getRecipes(qParam){
                 displayRecipes(recipeData);
                 console.log(response);
             })
-        } else{ 
-            // TO DO: add modal alert that displays "problem getting recipes"
-            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+        // } else {
+        //     console.log ("BROKEN");
+        //     // TO DO: add modal alert that displays "problem getting recipes"
+        //     M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+        
         }
     });
 };
@@ -81,7 +83,7 @@ function displayRecipes(recipeData){
     for (var i = 0; i < recipes.length; i++) {
         var currentRecipe = recipes[i].recipe;
         //console.log(currentRecipe);
-
+        if (recipes.length > 0){
         $("#dataDisplay").append(`
             <div class="recipe-card card col s3">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -108,6 +110,11 @@ function displayRecipes(recipeData){
                 </div>
             </div>
         `);
+        }else{ 
+            console.log ("BROKEN");
+        //     // TO DO: add modal alert that displays "problem getting recipes"
+            M.toast({html: 'No recipes available! Please try another search', classes: 'rounded green'});
+        }
 
         // // NOTE: These steps create a Materialize card called "Card Reveal"
         // // 1a. create card for current recipe and set classes
