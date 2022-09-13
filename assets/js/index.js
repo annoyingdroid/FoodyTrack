@@ -251,9 +251,20 @@ function faveRecipe(recipeName, recipeLink){
     loadFaves();
 }
 
-//Search Button Eventlistener
+var formSubmitHandler = function (){
+    var healthOptSel = $("#healthSelect").val() || [];
+    console.log(healthOptSel);
+    var dietOptSel = $("#dietSelect").val() || [];
+    console.log(dietOptSel);
+    var dishOptSel = $("#dishSelect").val() ||  [];
+    console.log(dishOptSel);
+    
+
+}
+
+// Search Button Eventlistener
 $("#searchBtn").on('click', function(event){
     $("#dataDisplay").html("");
-    getRecipes($("#qParameter").val());
+    formSubmitHandler();
 });
 
