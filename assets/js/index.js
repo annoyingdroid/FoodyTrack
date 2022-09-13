@@ -1,5 +1,5 @@
 // declare variables
-var qParam = document.querySelector('#qParameter');
+// var qParam = document.querySelector('#qParameter');
 var dataDisplayContainer = $("#dataDisplay");
 var foodEmojis = [];
 var dietOptions = ['Balanced', 'High Fiber', 'Hight Protein', 'Low Carb', 'Low Fat', 'Low Sodium'];
@@ -58,8 +58,8 @@ function loadFilters() {
 }
 
 // declare get recipes function
-function getRecipes(qParam){
-    var apiUrl = "https://api.edamam.com/api/recipes/v2?type=public&app_id=b08dc2fb&app_key=783268a2de0b8c46cf30721531506847&q=" + qParam;
+function getRecipes(qParam, healthOptSel, dietOptSel, dietOptSel){
+    var apiUrl = "https://api.edamam.com/api/recipes/v2?type=public&app_id=b08dc2fb&app_key=783268a2de0b8c46cf30721531506847&q=" + qParam + "&health=" + healthOptSel;
 
     // make request to the url
     fetch(apiUrl).then(function (response) {
@@ -251,9 +251,21 @@ function faveRecipe(recipeName, recipeLink){
     loadFaves();
 }
 
-//Search Button Eventlistener
+var formSubmitHandler = function (){
+    var qParam = $('#qParameter').val();
+    var healthOptSel = String($("#healthSelect").val() || []);
+    console.log(healthOptSel);
+    var dietOptSel = String($("#dietSelect").val()|| []);
+    console.log(dietOptSel);
+    var dishOptSel = String($("#dishSelect").val() ||  []);
+    console.log(dishOptSel);
+    getRecipes(qParam, healthOptSel, dietOptSel, dietOptSel);
+
+}
+
+// Search Button Eventlistener
 $("#searchBtn").on('click', function(event){
     $("#dataDisplay").html("");
-    getRecipes($("#qParameter").val());
+    formSubmitHandler();
 });
 
