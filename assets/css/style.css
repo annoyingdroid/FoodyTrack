@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -48,15 +50,16 @@ header {
   flex-wrap: wrap;
   min-width: 300px;
   align-items: center;
+  flex-basis: 0;
   
 }
 
 #searchFilters {
   display: flex;
-  padding: 20px 100px 20px 0;
+  padding: 20px 100px 20px 30px;
   margin: 0px;
   /* border: 1px solid red; */
-  min-width: 660px;
+  min-width: 700px;
   background-color: transparent;
 }
 
@@ -106,6 +109,9 @@ header {
 
 #favorites h5 {
   color: white;
+  display: flex;
+  justify-content: space-around;
+  min-width: 300px;
 }
 
 .input-field>label {
@@ -115,4 +121,61 @@ header {
 
 button, input {
   color: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ee6e73;
+  padding-bottom: 30px;
+  z-index: 9999;
+}
+
+.footer-notes {
+  font-weight: bold;
+  color: white;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.select-wrapper .caret {
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav .brand-logo {
+    font-size: 4vw;
+  }
+
+  .input-field>label {
+    font-size: 2vw;
+  }
+
+  .select-wrapper input.select-dropdown {
+    width: 11em;
+  }
+
+  input.select-dropdown.dropdown-trigger {
+    font-size: 2vw;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row .col.s3 {
+    
+    min-width: 12em;
+  }
+
+  #searchFilters {
+    min-width: 550px;
+  }
+
+
 }
