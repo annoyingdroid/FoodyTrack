@@ -3,7 +3,7 @@ var qParam = document.querySelector('#qParameter');
 var dataDisplayContainer = $("#dataDisplay");
 var foodEmojis = [];
 var dietOptions = ['Balanced', 'High Fiber', 'High Protein', 'Low Carb', 'Low Fat', 'Low Sodium'];
-var healthOptions = ['Alcohol Cocktails', 'Alcohol Free', 'Alcohol Free','Egg Free', 'Egg Free', 'Egg Free', 'Immunity Supporting', 'Kosher', 'Low Sugar', 'No Oil Added', 'Paleo', 'Peanut Free', 'Pescatarian', 'Pork Free', 'Red Meat Free', 'Sesame Free', 'Shellfish Free', 'Soy Free', 'Sugar Conscious', 'Sulfite Free', 'Tree Nut Free', 'Vegan', 'Vegetarian', 'Wheat Free'];
+var healthOptions = ['Alcohol Cocktails', 'Alcohol Free', 'Alcohol Free','Egg Free', 'Immunity Supporting', 'Kosher', 'Low Sugar', 'No Oil Added', 'Paleo', 'Peanut Free', 'Pescatarian', 'Pork Free', 'Red Meat Free', 'Sesame Free', 'Shellfish Free', 'Soy Free', 'Sugar Conscious', 'Sulfite Free', 'Tree Nut Free', 'Vegan', 'Vegetarian', 'Wheat Free'];
 var dishType = ['None', 'Biscuits and Cookies', 'Bread', 'Cereals', 'Condiments and Sauces', 'Desserts', 'Main Course', 'Pancake', 'Preps', 'Preserve', 'Salad', 'Sandwiches', 'Side Dish', 'Soup', 'Starter', 'Sweets'];
 
 

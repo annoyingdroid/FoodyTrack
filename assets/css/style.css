@@ -55,12 +55,13 @@ header {
   display: flex;
   padding: 20px 100px 20px 0;
   margin: 0px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   min-width: 660px;
+  background-color: transparent;
 }
 
 #favorites {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0px;
   background-color: transparent;
 }
@@ -70,7 +71,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 22px 22px 20px 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0px;
   background-color: transparent;
 }
@@ -103,14 +104,15 @@ header {
   min-width: 220px;
 }
 
-#healthSelect {
-  color: red;
-}
-
 #favorites h5 {
   color: white;
 }
 
-/* label {
-  color: red;
-} */
+.input-field>label {
+  color: white;
+  font: inherit;
+}
+
+button, input {
+  color: white;
+}
