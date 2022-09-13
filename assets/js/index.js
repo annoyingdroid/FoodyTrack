@@ -3,10 +3,6 @@
 var dataDisplayContainer = $("#dataDisplay");
 var foodEmojis = [];
 
-$(document).ready(function () {
-    $('select').formSelect();
-});
-
 //Dynamically sets favicon to random food emoji
 getEmojis();
 function getEmojis() {
@@ -38,9 +34,14 @@ function loadFaves() {
     }
 };
 
+// create 'Materialize' filter elements
+$(document).ready(function () {
+    $('select').formSelect();
+});
+
 // declare get recipes function
-function getRecipes(qParam, healthOptSel, dietOptSel, dietOptSel) {
-    var apiUrl = "https://api.edamam.com/api/recipes/v2?type=public&app_id=b08dc2fb&app_key=783268a2de0b8c46cf30721531506847&q=" + qParam;
+function getRecipes(qParam, healthParam, dietParam, dishParam) {
+    var apiUrl = "https://api.edamam.com/api/recipes/v2?type=public&app_id=b08dc2fb&app_key=783268a2de0b8c46cf30721531506847&q=" + qParam + dietParam + healthParam + dishParam;
 
     // make request to the url
     fetch(apiUrl).then(function (response) {
@@ -48,7 +49,7 @@ function getRecipes(qParam, healthOptSel, dietOptSel, dietOptSel) {
             response.json().then(function (recipeData) {
                 if (recipeData.hits.length > 0) {
                     displayRecipes(recipeData);
-                    console.log(response);
+                    console.log(recipeData.dietLabels, recipeData.healthLabels);
                 } else {
                     console.log("BROKEN");
                     // TO DO: add modal alert that displays "problem getting recipes"
@@ -108,14 +109,49 @@ function faveRecipe(recipeName, recipeLink) {
 }
 
 var formSubmitHandler = function () {
+    // get qParam value
     var qParam = $('#qParameter').val();
-    var healthOptSel = String($("#healthSelect").val() || []);
-    console.log(healthOptSel);
-    var dietOptSel = String($("#dietSelect").val() || []);
-    console.log(dietOptSel);
-    var dishOptSel = String($("#dishSelect").val() || []);
-    console.log(dishOptSel);
-    getRecipes(qParam, healthOptSel, dietOptSel, dietOptSel);
+    console.log("qParam >>>>>", qParam)
+
+    // get diet select value
+    var dietOptSel = $("#dietSelect").val();
+    // check if diet select value is empty
+    if (dietOptSel.length > 0) {
+        console.log("dietOptSel >>>>>", dietOptSel);
+        var dietParam = [];
+        for (var i = 0; i < dietOptSel.length; i++) {
+            var dietOpts = "&diet=" + dietOptSel[i];
+            dietParam = dietParam + dietOpts
+        }
+    } else {
+        var dietParam = "";
+    };
+
+    // get health select value
+    var healthOptSel = $("#healthSelect").val();
+    // check if health select value is empty
+    if (healthOptSel.length > 0) {
+        console.log("healthOptSel >>>>>", healthOptSel);
+        var healthParam = [];
+        for (var i = 0; i < healthOptSel.length; i++) {
+            var healthOpts = "&health=" + healthOptSel[i];
+            healthParam = healthParam + healthOpts
+        };
+    } else {
+        var healthParam = "";
+    };
+
+    // get dish select value
+    var dishOptSel = $("#dishSelect").val();
+    // check if dish select value is empty
+    if (dishOptSel.length) {
+        console.log("dishOptSel >>>>>", dishOptSel);
+        var dishParam = "&dishType=" + dishOptSel;
+    } else {
+        var dishParam = "";
+    };
+
+    getRecipes(qParam, dietParam, healthParam, dishParam);
 
 }
 
