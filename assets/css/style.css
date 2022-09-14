@@ -15,7 +15,7 @@ header {
 }
 
 .brand-logo {
-  margin-left:10px;
+  margin-left: 10px;
   font-size: larger;
 }
 
@@ -34,20 +34,17 @@ header {
 }
 
 #searchBox {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0px;
 }
 
 #searchFilters {
   display: flex;
-  padding: 20px 100px 20px 0;
-  margin: 0px;
-  border: 1px solid red;
-}
-
-#favorites {
-  border: 1px solid red;
-  margin: 0px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: start;
+  align-items: flex-start;
+  /* border: 1px solid red; */
 }
 
 #dataDisplay {
@@ -55,12 +52,11 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 22px 22px 20px 0;
-  border: 1px solid red;
   margin: 0px;
 }
 
 #favesList li {
-   margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
 /* set this attribute in javascript when dynamically created */
@@ -71,4 +67,10 @@ header {
 .calories {
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (max-width: 992px) {
+  #searchFilters {
+    overflow: scroll;
+  }
 }

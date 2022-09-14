@@ -72,7 +72,7 @@ function displayRecipes(recipeData) {
         //console.log(currentRecipe);
         if (recipes.length > 0) {
             $("#dataDisplay").append(`
-            <div class="recipe-card card col s3">
+            <div class="recipe-card card col s8 m4 l3 pull-s1">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src=`+ currentRecipe.image + `>
                 </div>
