@@ -25,20 +25,22 @@
     </nav>
 
     <main>
-        <div>
+        <div class="main-content">
             <div class="row">
                 <!-- SEARCH BOX -->
-                <div id="searchBox" class="col s4 card-panel" style="min-height: 120px; max-height: 120px">
+                <div id="searchBox" class="col s10 l2 push-s1 push-l0 card-panel"
+                    style="min-height: 120px; max-height: 120px">
                     <input id="qParameter" placeholder="Ingredient" />
                     <button id="searchBtn" class="search-btn btn waves-effect waves-light btn-large" type="submit">
-                        Find Recipes!
+                        Search
                         <i class="search-arrow material-icons">arrow_forward</i>
                     </button>
                 </div>
 
-                <div id="searchFilters" class="col s8 card-panel" style="min-height: 120px; max-height: 120px">
+                <div id="searchFilters" class="col s10 l8 push-s1 push-l1 card-panel"
+                    style="min-height: 120px; max-height: 120px">
                     <!-- DIET OPTIONS FILTER -->
-                    <div id="dietOptions" class="input-field col s3">
+                    <div id="dietOptions" class="input-field col s12 l3">
                         <select id="dietSelect" multiple>
                             <option value="" disabled>Any</option>
                             <option value="balanced">Balanced</option>
@@ -52,7 +54,7 @@
                     </div>
 
                     <!-- HEALTH OPTIONS FILTER -->
-                    <div id="healthOptions" class="input-field col s3">
+                    <div id="healthOptions" class="input-field col s12 l3">
                         <select id="healthSelect" multiple="multiple">
                             <option value="" disabled>Any</option>
                             <option value="alcohol-cocktails">Alcohol Cocktails</option>
@@ -84,7 +86,7 @@
                     </div>
 
                     <!-- DISH TYPE FILTER  -->
-                    <div id="dishTypeOptions" class="input-field col s3">
+                    <div id="dishTypeOptions" class="input-field col s12 l3">
                         <select id="dishSelect">
                             <option value="">Any</option>
                             <option value="Biscuits and cookies">Biscuits and Cookies</option>
@@ -108,9 +110,9 @@
                 </div>
             </div>
 
-            <!-- FAVORITES DIV -->
             <div class="row">
-                <div id="favorites" class="col s4 card-panel">
+                <!-- FAVORITES DIV -->
+                <div id="favorites" class="col s2 hide-on-med-and-down card-panel">
                     <h5>
                         Favorites
                         <button class="btn btn-small waves-effect waves-teal btn-flat" style="display: inline"
@@ -122,7 +124,7 @@
                     <ul id="favesList"></ul>
                 </div>
                 <!-- SEARCH RESULTS -->
-                <div id="dataDisplay" class="col s8 card">
+                <div id="dataDisplay" class="col s12 l8 push-l1 card">
                     <!-- DUMMY CARD -->
                     <!-- <div class="recipe-card card col s3">
                         <div class="card-image waves-effect waves-block waves-light">
