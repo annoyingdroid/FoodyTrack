@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+html {
+  background-image: url("../images/slate_food_background.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 main {
   margin-top: 20px;
 }
